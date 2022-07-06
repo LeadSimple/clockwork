@@ -62,7 +62,7 @@ module Clockwork
     rescue => e
       error = e
       @manager.log_error e
-      @manager.handle_error e
+      @manager.handle_error e, self
     ensure
       finish = Process.clock_gettime(Process::CLOCK_MONOTONIC)
       duration = ((finish - start) * 1000).round # milliseconds
