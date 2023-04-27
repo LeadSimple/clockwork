@@ -1,7 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "clockwork"
   s.version = "3.0.2"
-
   s.authors = ["Adam Wiggins", "tomykaira"]
   s.license = 'MIT'
   s.description = "A scheduler process to replace cron, using a more flexible Ruby syntax running as a single long-running process.  Inspired by rufus-scheduler and resque-scheduler."
