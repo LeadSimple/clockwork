@@ -63,7 +63,7 @@ def optparser_abort(opts,message)
 end
 
 optparser_abort opts, "ERROR: --clock=FILE is required." unless @options[:file]
-optparser_abort opts, "ERROR: clock file #{@options[:file]} does not exist." unless File.exists?(@options[:file])
+optparser_abort opts, "ERROR: clock file #{@options[:file]} does not exist." unless File.exist?(@options[:file])
 optparser_abort opts, "ERROR: File extension specified in --clock must be '.rb'" unless File.extname(@options[:file]) == ".rb"
 
 @options[:identifier]  ||= "#{File.basename(@options[:file],'.*')}"
@@ -71,8 +71,8 @@ process_name = "#{bin_basename}.#{@options[:identifier]}"
 
 @options[:log_dir] ||= @options[:pid_dir]
 
-Dir.mkdir(@options[:pid_dir]) unless File.exists?(@options[:pid_dir])
-Dir.mkdir(@options[:log_dir]) unless File.exists?(@options[:log_dir])
+Dir.mkdir(@options[:pid_dir]) unless File.exist?(@options[:pid_dir])
+Dir.mkdir(@options[:log_dir]) unless File.exist?(@options[:log_dir])
 
 puts "#{process_name}: pid file: #{File.expand_path(File.join(@options[:pid_dir],process_name + '.pid'))}"
 

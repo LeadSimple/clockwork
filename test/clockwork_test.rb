@@ -40,7 +40,7 @@ describe Clockwork do
     Clockwork.run
     assert run
     assert @log_output.string.include?("Triggering 'an event'")
-    assert_match /Finished 'an event' duration_ms=\d+ error=nil/, @log_output.string
+    assert_match(/Finished 'an event' duration_ms=\d+ error=nil/, @log_output.string)
   end
 
   it 'should log exceptions' do
@@ -54,7 +54,7 @@ describe Clockwork do
     Clockwork.run
     assert run
     assert @log_output.string.include?("Triggering 'an event'")
-    assert_match /Finished 'an event' duration_ms=\d+ error=#<RuntimeError: boom>/, @log_output.string
+    assert_match(/Finished 'an event' duration_ms=\d+ error=#<RuntimeError: boom>/, @log_output.string)
   end
 
   it 'should pass event without modification to handler' do

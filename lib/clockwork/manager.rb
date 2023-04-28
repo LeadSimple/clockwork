@@ -165,6 +165,7 @@ module Clockwork
           event.run_now?(t)
         rescue => e
           log_error(e)
+          handle_error(e)
           false
         end
       end
